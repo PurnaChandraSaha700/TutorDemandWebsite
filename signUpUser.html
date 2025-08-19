@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorQuest - User Sign Up</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .signup-container {
+            max-width: 600px;
+            margin: 0 auto;
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #333;
+        }
+
+        .signup-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .signup-header h2 {
+            color: #007bff;
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+
+        .signup-header p {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        .form-control {
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+            color: #444;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: none;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .form-check-label {
+            color: #444;
+        }
+
+        .signup-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Colors for form sections */
+        .personal-section {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .location-section {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .role-section {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            color: #333;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('img/page2.jpg');">
+
+    <div class="back-button">
+        <a href="loginPage.html" class="btn btn-secondary back-button">Back</a>
+        </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 signup-container">
+                <div class="signup-header">
+                    <h2>TutorQuest - User Sign Up</h2>
+                    <p>Please enter your personal and location information below.</p>
+                </div>
+                <form action="signUpUser.php" method="POST">
+                    <!-- Personal Information Section -->
+                    <div class="personal-section">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="dateOfBirth" class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Gender</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gender" id="genderMale"
+                                        value="male" required>
+                                    <label class="form-check-label" for="genderMale">Male</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gender" id="genderFemale"
+                                        value="female">
+                                    <label class="form-check-label" for="genderFemale">Female</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <!-- Location Information Section -->
+                    <div class="location-section">
+                        <h4>Location Information</h4>
+                        <div class="mb-3">
+                            <label for="permanentAddress" class="form-label">Permanent Address</label>
+                            <textarea class="form-control" id="permanentAddress" name="permanentAddress" rows="3"
+                                required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="currentAddress" class="form-label">Current Address</label>
+                            <textarea class="form-control" id="currentAddress" name="currentAddress" rows="3"
+                                required></textarea>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="city" class="form-label">City</label>
+                                <input type="text" class="form-control" id="city" name="city" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="zipCode" class="form-label">Zip Code</label>
+                                <input type="text" class="form-control" id="zipCode" name="zipCode" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Choose Role Section -->
+                    <div class="role-section">
+                        <h4>Choose Role</h4>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="role" id="roleTeacher"
+                                    value="teacher" required>
+                                <label class="form-check-label" for="roleTeacher">Teacher</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="role" id="roleStudent"
+                                    value="student">
+                                <label class="form-check-label" for="roleStudent">Student</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </div>
+                </form>
+                <div class="mt-3 text-center">
+                    <a href="homePage.html" class="btn btn-secondary">Exit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
